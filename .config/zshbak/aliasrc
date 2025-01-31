@@ -1,0 +1,9 @@
+# my aliases
+
+alias grep="grep --color=auto" 
+alias diff="diff --color=auto" 
+alias rm="rm -ri"
+alias mv="mv -i"
+alias v="nvim"
+alias ls="ls -lah --color=auto --group-directories-first" 
+alias update="sudo apt-get update && sudo apt-get upgrade"

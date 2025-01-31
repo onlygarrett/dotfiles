@@ -1,3 +1,3 @@
-require("jeevim.lazy")
-require("jeevim.set")
-require("jeevim.remap")
+require("jeedev.core")
+require("jeedev.lazy")
+
