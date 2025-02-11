@@ -1,9 +1,11 @@
+# powerlevel 10k prompt setup
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# setting up mapfile
 zmodload zsh/mapfile
-# ENV VARS
+# grabbing chrome web data for some stuff
 export CHROME_WEB_DATA="/mnt/c/Users/onlyg.GARRETT-PC/AppData/Local/Google/Chrome/User Data/Default/Web Data"
 
 # ZSH shtuff
@@ -19,8 +21,10 @@ export AL_CFG=$W_APPDATA/Roaming/alacritty
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# setting up completions 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 # Add wisely, as too many plugins slow down shell startup.
+# !important THESE ARE YOUR OH-MY-ZSH PLUGINS
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting autoupdate rust tmux sudo you-should-use) 
 
 source $ZSH/oh-my-zsh.sh
@@ -29,6 +33,7 @@ DISABLE_AUTO_UPDATE=true
 DISABLE_MAGIC_FUNCTIONS=true
 
 
+# yazi alias if you want to use it
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
     yazi "$@" --cwd-file="$tmp"
@@ -39,10 +44,9 @@ function y() {
 }
 
 
-# Example aliases
+# Aliases
 alias c="clear"
 alias ..="cd .."
-
 alias zshconfig="source ~/.zshrc"
 alias ls="eza --icons --git"
 alias l='eza -alg --color=always --group-directories-first --git'
@@ -86,6 +90,7 @@ if [ -d "$FNM_PATH" ]; then
     eval "`fnm env`"
 fi
 export PATH="$HOME/.pyenv/bin:$PATH"
+# some inits for pyenv and zoxide
 eval "$(pyenv init --path)"
 eval "$(zoxide init zsh)"
 
