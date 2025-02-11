@@ -26,7 +26,7 @@ return {
 		{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
 		{ "<c-p>", "<Plug>(YankyCycleForward)" },
 		{ "<c-n>", "<Plug>(YankyCycleBackward)" },
-		{ "<leader>pp", "<cmd>YankyRingHistory<cr>" },
+		{ "<leader>ph", "<cmd>YankyRingHistory<cr>" },
 	},
 	event = "BufReadPre",
 }

@@ -1,45 +1,16 @@
 return {
 	"rmagatti/goto-preview",
-	-- event = "VeryLazy",
-	keys = {
+	event = "LspAttach",
+	init = function()
+		local gtp = require("goto-preview")
 
-		{
-			"<leader>pd",
-			function()
-				require("goto-preview").goto_preview_definition()
-			end,
-			{ desc = "Preview Definition", silent = true },
-		},
-		{
-			"<leader>pt",
-			function()
-				require("goto-preview").goto_preview_type_definition()
-			end,
-			{ desc = "Preview Type Definition", silent = true },
-		},
-		{
-			"<leader>pi",
-			function()
-				require("goto-preview").goto_preview_type_definition()
-			end,
-			{ desc = "Preview Implementation", silent = true },
-		},
-		{
-			"<leader>pr",
-			function()
-				require("goto-preview").goto_preview_references()
-			end,
-			{ desc = "Preview References", silent = true },
-		},
-		{
-			"<leader>pc",
-			function()
-				require("goto-preview").close_all_win()
-			end,
-			{ desc = "Close Previews", silent = true },
-		},
-	},
+		vim.keymap.set("n", "<leader>q", function()
+			gtp.dismiss_preview(0)
+		end, { desc = "Close current definition preview" })
+	end,
 	config = function()
-		require("goto-preview").setup()
+		require("goto-preview").setup({
+			default_mappings = true,
+		})
 	end,
 }

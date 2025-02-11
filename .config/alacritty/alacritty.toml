@@ -1,51 +1,24 @@
-import = [
-  "~/.config/alacritty/themes/alacritty-theme/themes/papercolor_dark.toml"
-]
 
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+PROMPT_TOOLKIT_COLOR_DEPTH = "DEPTH_24_BIT"
+TERM = "xterm-256color"
+
+[general]
+import = [
+  "C:\\Users\\onlyg.GARRETT-PC\\AppData\\Roaming\\alacritty\\themes\\rose-pine.toml",
+]
 live_config_reload = true
+
+[terminal.shell]
+program = "wsl.exe"
+args = ["--cd ~/development/repos", "tmux"]
 
 [bell]
 animation = "EaseOutExpo"
 duration = 0
 
-[colors]
-draw_bold_text_with_bright_colors = true
-
-# [[colors.indexed_colors]]
-# color = "0xF8BD96"
-# index = 16
-#
-# [[colors.indexed_colors]]
-# color = "0xF5E0DC"
-# index = 17
-#
-# [colors.bright]
-# black = "0x988BA2"
-# blue = "0x96CDFB"
-# cyan = "0x89DCEB"
-# green = "0xABE9B3"
-# magenta = "0xF5C2E7"
-# red = "0xF28FAD"
-# white = "0xD9E0EE"
-# yellow = "0xFAE3B0"
-#
-# [colors.cursor]
-# cursor = "0xF5E0DC"
-# text = "0x1E1D2F"
-#
-# [colors.normal]
-# black = "0x6E6C7E"
-# blue = "0x96CDFB"
-# cyan = "0x89DCEB"
-# green = "0xABE9B3"
-# magenta = "0xF5C2E7"
-# red = "0xF28FAD"
-# white = "0xD9E0EE"
-# yellow = "0xFAE3B0"
-#
-# [colors.primary]
-# background = "0x1E1D2F"
-# foreground = "0xD9E0EE"
 
 [cursor]
 blink_interval = 500
@@ -56,12 +29,11 @@ unfocused_hollow = false
 blinking = "Off"
 shape = "Block"
 
-
 [font]
 size = 22
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Bold"
 
 [font.glyph_offset]
@@ -69,10 +41,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
+style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 [font.offset]
@@ -89,12 +62,12 @@ mouse = "Middle"
 [selection]
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-
 [window]
-decorations = "full"
-dynamic_title = true
+title = "Hacker Man"
+decorations = "buttonless"
+dynamic_title = false
 option_as_alt = "Both"
-#startup_mode = "Maximized"
+startup_mode = "Windowed"
 
 [window.dimensions]
 columns = 160
@@ -103,3 +76,65 @@ lines = 80
 [window.padding]
 x = 4
 y = 4
+
+[window.position]
+x = 1
+y = 1
+
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "None"
+action = "ScrollPageUp"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "None"
+action = "ScrollPageDown"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+program = "C:/Program Files/Alacritty/alacritty.exe"
+args = [
+  "--config-file",
+  "C:\\Users\\onlyg.GARRETT-PC\\AppData\\Roaming\\alacritty\\alacritty-pwsh.toml",
+]
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control"
+chars = "\u0000"
+
+[terminal]

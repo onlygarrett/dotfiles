@@ -1,0 +1,4 @@
+# Gitignore for dotfiles
+
+# ignore all the bak files
+*bak

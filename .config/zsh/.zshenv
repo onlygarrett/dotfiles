@@ -6,10 +6,7 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 # lspserver
 export PATH=$PATH:$HOME/.config/lsp/lua-language-server/bin/lua_language_server
 export PATH=$PATH:$HOME/.config/lsp/lua-language-server/bin/
-
 export HISTFILE="$ZDOTDIR/.zhistory"    # History filepath
 export HISTSIZE=10000                   # Maximum events for internal history
 export SAVEHIST=10000                   # Maximum events in history file
 
-export SPACESHIP_CONFIG="$XDG_CONFIG_HOME/spaceship/spaceship.zsh"
-export IDEA_CONFIG="/usr/local/src/idea-IC-241.18034.62/"

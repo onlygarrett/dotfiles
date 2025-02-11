@@ -22,8 +22,15 @@ return {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<esc>"] = actions.close,
+						["<C-d>"] = actions.delete_buffer + actions.move_to_top,
 					},
 				},
+				layout_config = {
+					vertical = { preview_cutoff = 120 },
+				},
+				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 			},
 			extensions = {
 				undo = {

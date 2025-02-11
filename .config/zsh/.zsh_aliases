@@ -1,0 +1,90 @@
+# Global aliases
+alias -g C='| sed -r "s/\x1b\[[0-9;]*m//g" | xsel --clipboard'
+alias -g G='| grep -i --color=always'
+alias -g H=' --help'
+alias -g L='| less'
+alias -g NUL="> /dev/null 2>&1"
+alias -g R="2>&1 | tee output.txt"
+alias -g T="| tail -n +2"
+alias -g V=' --version'
+alias -g W='| nvim -c "setlocal buftype=nofile bufhidden=wipe filetype=markdown" -c "nnoremap <buffer> q :q!<CR>" -'
+
+# Suffix aliases
+alias -s md=nvim
+alias -s txt=nvim
+alias -s yaml=nvim
+alias -s html='xdg-open'
+
+# Directories and files
+alias la='/usr/bin/ls'
+alias ls='exa --color=always --long --all --header --icons --git'
+alias lsa='exa --color=always --long --all --sort=age --reverse --header --icons'
+alias lsf='fd --max-depth=1 --type=file'
+alias lst='exa --tree --level=2 --icons --color=always --git'
+alias lsdir='ls -ld *(/om[1])'
+alias tui='taskwarrior-tui'
+alias grt='cd "$(git rev-parse --show-toplevel)"'
+alias perf='system76-power profile performance'
+
+# Commands shadow
+alias br='br -sg'
+alias tf='terraform'
+alias lpf='list_project_files'
+alias watchtui='nodemon --signal SIGTERM -q --watch ~/.taskrc --ext taskrc --exec "tui --report current"'
+alias k9s='k9s -A'
+alias bfi='__create_branch_from_issue.sh'
+alias si='__search_internet.py'
+alias sip='__search_internet.py --pro'
+alias vids='cd /mnt/nas_vids'
+alias vm="nvim -c ':lua MiniFiles.open()'"
+alias aider='aider --sonnet --dark-mode --no-auto-commits'
+alias aider-commit='aider --model gpt-4o --dark-mode'
+alias cat='bat'
+alias df=duf
+alias diff=colordiff
+alias fd='fd --hidden'
+alias mux=tmuxinator
+alias nv='neovide --multigrid --notabs'
+alias ra=yazi
+alias vim=nvim
+alias v=nvim
+alias watch=viddy
+alias ugu='ug -Q -. --view=nvim'
+
+## Kubernetes aliases
+alias kconf='__create_separate_kubeconfig.sh'
+alias kdump='kubectl get all --all-namespaces'
+alias kaf='kubectl apply -f'
+alias kdf='kubectl delete -f'
+alias kstart='~/dev/dotfiles/scripts/__kind_manager.sh --start'
+alias kstop='~/dev/dotfiles/scripts/__kind_manager.sh --stop'
+
+# Other
+alias remind='__reminder.sh'
+alias adit='vim ~/.zsh_aliases'
+alias abit='vim ~/.zsh_abbreviations'
+alias dca='mux s dca'
+alias dev='cd ~/dev'
+alias loft='cd ~/loft'
+alias disk='gdu'
+alias diskusage='du -sh * | sort -h --reverse'
+alias dls="docker container ls -a"
+alias fdit='vim ~/.zsh_functions'
+alias gcc='git diff --stat --cached origin/master' # Git Check Commit before pushing
+alias gs='git show'
+alias home='nohup firefox -P "Home" > /dev/null 2>&1 &'
+alias lg='lazygit'
+alias lvim='nvim -c "normal '\''0"'
+alias relog="DISPLAY=:0 gnome-session-quit --force"
+alias rest='shutdown now'
+alias revive='shutdown -r now'
+alias rm='rm -v'
+alias serve="browser-sync start -s -f . --no-notify --host localhost --port 5000"
+alias sr='omz reload'
+alias tedit='nvim ~/tmux/tmux.conf'
+alias timesum='__summarize_timew.py'
+alias wm='watch kubectl get managed'
+alias zedit='nvim ~/.zshrc'
+# PROJECT: project
+alias pedit='nvim D:\\development\\repos\\'
+

@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
-keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Return to tree view." })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- increment/decrement numbers
@@ -25,7 +24,11 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- Dismiss Noice Message
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice Message" })
 
+-- Restarting the LSP
+keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
 
-vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
-
+-- Shortcut for faster save and quit
+keymap.set("n", "<leader>w", "<cmd>update<cr>", {
+	silent = true,
+	desc = "save buffer",
+})

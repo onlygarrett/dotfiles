@@ -7,21 +7,87 @@ return {
 		"nvim-treesitter/nvim-treesitter", -- optional
 		"nvim-tree/nvim-web-devicons", -- optional
 	},
-	opts = {
-		hover = {
-			max_width = 0.45,
-			max_height = 0.7,
-		},
-		callhierarchy = { silent = true, keys = { quit = keys.quit } },
-		finder = {
-			silent = true,
-			keys = { quit = keys.quit, toggle_or_open = keys.toggle_or_jump },
-		},
-		definition = {
-			silent = true,
+	{
+		"RRethy/vim-illuminate",
+		opts = {
+			filetypes_denylist = {
+				"sagafinder",
+				"sagacallhierarchy",
+				"sagaincomingcalls",
+				"sagapeekdefinition",
+			},
 		},
 	},
 	config = function()
+		require("lspsaga").setup({
+			opts = {
+				preview = {
+					lines_above = 0,
+					lines_below = 10,
+				},
+
+				code_action = {
+					enable = false,
+					extend_gitsigns = true,
+				},
+
+				scroll_preview = {
+					scroll_down = "<C-f>",
+					scroll_up = "<C-b>",
+				},
+				request_timeout = 2000,
+
+				lightbulb = {
+					enable = false,
+				},
+
+				rename = {
+					enable = false,
+				},
+
+				finder = {
+					silent = true,
+					{ quit = keys.quit, toggle_or_open = keys.toggle_or_jump },
+				},
+
+				diagnostic = {
+					enable = false,
+				},
+
+				symbol_in_winbar = {
+					enable = false,
+					hide_keyword = false,
+					show_file = true,
+					folder_level = 0,
+				},
+
+				definition = {
+					silent = true,
+				},
+
+				ui = {
+					theme = "round",
+					border = "rounded",
+					winblend = 0,
+					expand = "",
+					collaspe = "",
+					preview = " ",
+					code_action = "󱧣 ",
+					diagnostic = "🐞",
+					hover = " ",
+					kind = {},
+				},
+
+				outline = { enable = false, silent = true, keys = keys },
+				callhierarchy = { silent = true, keys = { quit = keys.quit } },
+			},
+		})
+		vim.keymap.set(
+			"v",
+			"<leader>la",
+			"<cmd>Lspsaga code_action<cr>",
+			{ desc = "Lspsaga | Code Action", silent = true }
+		)
 		vim.keymap.set(
 			"n",
 			"<leader>lo",
@@ -53,75 +119,5 @@ return {
 			"<Cmd>Lspsaga peek_definition<CR>",
 			{ desc = "Goto definition", silent = true }
 		)
-
-		require("lspsaga").setup({
-			lightbulb = {
-				enable = false,
-			},
-		})
-		-- 	require("lspsaga").setup({
-		-- 		opts = {
-		-- 			preview = {
-		-- 				lines_above = 0,
-		-- 				lines_below = 10,
-		-- 			},
-		--
-		-- 			code_action = {
-		-- 				enable = false,
-		-- 				extend_gitsigns = true,
-		-- 			},
-		--
-		-- 			scroll_preview = {
-		-- 				scroll_down = "<C-f>",
-		-- 				scroll_up = "<C-b>",
-		-- 			},
-		-- 			request_timeout = 2000,
-		--
-		-- 			lightbulb = {
-		-- 				enable = false,
-		-- 			},
-		--
-		-- 			rename = {
-		-- 				enable = false,
-		-- 			},
-		--
-		-- 			finder = {
-		-- 				silent = true,
-		-- 				{ quit = keys.quit, toggle_or_open = keys.toggle_or_jump },
-		-- 			},
-		--
-		-- 			diagnostic = {
-		-- 				enable = false,
-		-- 			},
-		--
-		-- 			symbol_in_winbar = {
-		-- 				enable = false,
-		-- 				hide_keyword = false,
-		-- 				show_file = true,
-		-- 				folder_level = 0,
-		-- 			},
-		--
-		-- 			definition = {
-		-- 				silent = true,
-		-- 			},
-		--
-		-- 			ui = {
-		-- 				theme = "round",
-		-- 				border = "rounded",
-		-- 				winblend = 0,
-		-- 				expand = "",
-		-- 				collaspe = "",
-		-- 				preview = " ",
-		-- 				code_action = "󱧣 ",
-		-- 				diagnostic = "🐞",
-		-- 				hover = " ",
-		-- 				kind = {},
-		-- 			},
-		--
-		-- 			outline = { enable = false, silent = true, keys = keys },
-		-- 			callhierarchy = { silent = true, keys = { quit = keys.quit } },
-		-- 		},
-		-- 	})
-		-- 	-- vim.keymap.set("v", "<leader>la", "<cmd>Lspsaga code_action<cr>", { desc = "Lspsaga | Code Action", silent = true })
 	end,
 }
