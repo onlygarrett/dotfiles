@@ -7,7 +7,7 @@ TERM = "xterm-256color"
 
 [general]
 import = [
-  "C:\\Users\\onlyg.GARRETT-PC\\AppData\\Roaming\\alacritty\\themes\\rose-pine.toml",
+  "C:\\PATH_TO_USER\\AppData\\Roaming\\alacritty\\themes\\rose-pine.toml",
 ]
 working_directory = "D:\\development\\repos"
 live_config_reload = true
@@ -94,7 +94,7 @@ bindings = [
   { key = "N", mods = "Control", action = "SpawnNewInstance" },
   { key = "N", mods = "Control|Shift", "command" = { "program" = "alacritty.exe", "args" = [
     "--config-file",
-    "C:\\Users\\onlyg.GARRETT-PC\\AppData\\Roaming\\alacritty\\alacritty.toml",
+    "C:\\PATH_TO_USER\\AppData\\Roaming\\alacritty\\alacritty.toml",
   ] } },
   { key = "Space", mods = "Control", chars = "\u0000" },
 ]
