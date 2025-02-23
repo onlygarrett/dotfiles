@@ -1,0 +1,48 @@
+return {
+	-- "adriankarlen/buffed.nvim",
+	-- event = "BufReadPost",
+	-- dependencies = { "echasnovski/mini.icons" },
+	-- opts = {
+	-- 	filters = {
+	-- 		modified = {
+	-- 			icon = "",
+	-- 			hl = "DiagnosticWarn",
+	--
+	-- 			fun = function(bufnr)
+	-- 				return vim.fn.getbufvar(bufnr, "&mod") == 1
+	-- 			end,
+	-- 		},
+	-- 		with_error = {
+	-- 			icon = "󰈸",
+	--
+	-- 			hl = "DiagnosticError",
+	--
+	-- 			fun = function(bufnr)
+	-- 				local diagnostic = vim.diagnostic.get(bufnr, { severity = { min = "ERROR" } })
+	-- 				return #diagnostic > 0
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- },
+	-- keys = {
+	-- 	{
+	-- 		"<leader>bp",
+	-- 		function()
+	-- 			vim.ui.select(require("buffed").get("modified"), { prompt = "select modifed" }, function(selection)
+	-- 				vim.cmd.edit(selection)
+	-- 			end)
+	-- 		end,
+	--
+	-- 		desc = "select buff",
+	-- 	},
+	-- 	{
+	-- 		"<leader>bd",
+	-- 		function()
+	-- 			vim.ui.select(require("buffed").get("with_error"), { prompt = "select with error" }, function(selection)
+	-- 				vim.cmd.edit(selection)
+	-- 			end)
+	-- 		end,
+	-- 		desc = "select debuff",
+	-- 	},
+	-- },
+}

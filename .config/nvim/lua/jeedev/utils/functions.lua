@@ -123,6 +123,10 @@ X.cmd = function(name, command, desc)
 	vim.api.nvim_create_user_command(name, command, desc)
 end
 
+vim.api.nvim_create_user_command("LazyExtras", function()
+	LazyVim.extras.show()
+end, { desc = "Manage LazyVim extras" })
+
 X.autocmd = function(evt, opts)
 	vim.api.nvim_create_autocmd(evt, opts)
 end

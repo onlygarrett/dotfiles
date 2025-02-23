@@ -15,6 +15,7 @@ require("lazy").setup({
 	{ import = "jeedev.plugins" },
 	{ import = "jeedev.plugins.lsp" },
 	{ import = "jeedev.plugins.colorschemes" },
+	{ import = "jeedev.plugins.ai" },
 }, {
 	checker = {
 		enabled = true,

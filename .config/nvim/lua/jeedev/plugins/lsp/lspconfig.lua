@@ -32,9 +32,12 @@ return {
 				"html",
 				"cssls",
 				"emmet_ls",
+				"emmet_language_server",
 				"jsonls",
 				"pyright",
+				"marksman",
 			},
+			automatic_installation = true,
 			handlers = {
 				function(server_name) -- default handler (optional)
 					require("lspconfig")[server_name].setup({
@@ -107,6 +110,13 @@ return {
 							},
 						},
 					},
+				})
+			end,
+			["pyright"] = function()
+				-- configure py language server
+				require("lspconfig").pyright.setup({
+					capabilities = capabilities,
+					filetypes = { "python" },
 				})
 			end,
 		})

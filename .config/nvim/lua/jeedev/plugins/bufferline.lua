@@ -46,7 +46,7 @@ return {
 							highlight = "EcovimNvimTreeTitle",
 							text_align = "center",
 
-							separator = true,
+							separator = false,
 						},
 					},
 				},

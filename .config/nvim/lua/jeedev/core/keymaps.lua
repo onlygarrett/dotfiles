@@ -2,6 +2,13 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+
+keymap.set("n", "QQ", ":q!<CR>", { desc = "Force quit" })
+keymap.set("n", "WW", ":w!<CR>", { desc = "Force save" })
+keymap.set("n", "<leader>qq", ":q<CR>", { silent = true, noremap = true }, { desc = "Quit" })
+
+keymap.set("i", "<C-c>", "<Esc>")
+keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- increment/decrement numbers

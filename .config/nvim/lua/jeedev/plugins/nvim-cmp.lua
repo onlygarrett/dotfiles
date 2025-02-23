@@ -1,8 +1,10 @@
 return {
 	"hrsh7th/nvim-cmp",
+	commit = "6c84bc75c64f778e9f1dcb798ed41c7fcb93b639",
 	event = "InsertEnter",
 	dependencies = {
 		"neovim/nvim-lspconfig",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"hrsh7th/cmp-nvim-lsp",
@@ -17,6 +19,16 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 		"rafamadriz/friendly-snippets", -- useful snippets
 		"onsails/lspkind.nvim", -- vs-code like pictograms
+		{
+			"jcdickinson/codeium.nvim",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"hrsh7th/nvim-cmp",
+			},
+			config = function(_, opts)
+				require("codeium").setup(opts)
+			end,
+		},
 		{
 			"zbirenbaum/copilot-cmp",
 			opts = {},
@@ -54,9 +66,7 @@ return {
 
 		vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
-		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
-
 		local has_words_before = function()
 			if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
 				return false
@@ -109,6 +119,7 @@ return {
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "copilot", group_index = 1, priority = 100 },
+				{ name = "codeium", max_item_count = 5, priority = 1 },
 				{
 					name = "nvim_lsp",
 					max_item_count = 20,
