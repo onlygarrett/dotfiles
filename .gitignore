@@ -2,3 +2,6 @@
 
 # ignore all the bak files
 *bak
+
+# ignore tmux plugins
+tmux/plugins/*
