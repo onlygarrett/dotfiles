@@ -1,5 +1,6 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+	enabled = false,
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		local nvimtree = require("nvim-tree")
@@ -18,6 +19,7 @@ return {
 			view = {
 				width = 30,
 				relativenumber = true,
+				side = "right",
 			},
 			-- change folder arrow icons
 			renderer = {
