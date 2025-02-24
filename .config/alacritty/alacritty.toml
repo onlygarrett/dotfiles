@@ -1,0 +1,140 @@
+
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+PROMPT_TOOLKIT_COLOR_DEPTH = "DEPTH_24_BIT"
+TERM = "xterm-256color"
+
+[general]
+import = [
+  "C:\\PATH_TO_USER\\AppData\\Roaming\\alacritty\\themes\\rose-pine.toml",
+]
+live_config_reload = true
+
+[terminal.shell]
+program = "wsl.exe"
+args = ["--cd ~/development/repos", "tmux"]
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+
+[cursor]
+blink_interval = 500
+blink_timeout = 5
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+size = 22
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+title = "Hacker Man"
+decorations = "buttonless"
+dynamic_title = false
+option_as_alt = "Both"
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 160
+lines = 80
+
+[window.padding]
+x = 4
+y = 4
+
+[window.position]
+x = 1
+y = 1
+
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "PageUp"
+mods = "None"
+action = "ScrollPageUp"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "PageDown"
+mods = "None"
+action = "ScrollPageDown"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "Home"
+mods = "Shift"
+action = "ScrollToTop"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "End"
+mods = "Shift"
+action = "ScrollToBottom"
+mode = "~Alt"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+key = "N"
+mods = "Control|Shift"
+
+[keyboard.bindings.command]
+program = "C:/Program Files/Alacritty/alacritty.exe"
+args = [
+  "--config-file",
+  "C:\\PATH_TO_USER\\AppData\\Roaming\\alacritty\\alacritty-pwsh.toml",
+]
+
+[[keyboard.bindings]]
+key = "Space"
+mods = "Control"
+chars = "\u0000"
+
+[terminal]
