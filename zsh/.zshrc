@@ -46,7 +46,7 @@ alias c="clear"
 alias ..="cd .."
 
 alias zshconfig="source ~/.zshrc"
-alias ls="eza --icons --git"
+alias ls="eza -a --icons --git"
 alias l='eza -alg --color=always --group-directories-first --git'
 alias ll='eza -alSgh --color=always --group-directories-first --icons --header --long --git'
 alias lt='eza -@alT --color=always --git'
