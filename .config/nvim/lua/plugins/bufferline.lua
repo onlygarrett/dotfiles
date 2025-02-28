@@ -41,12 +41,10 @@ return {
           end,
           offsets = {
             {
-              filetype = "NvimTree",
-              text = "File Explorer",
-              highlight = "EcovimNvimTreeTitle",
+              filetype = "snacks_layout_box",
+              text = "󰙅  File Explorer",
+              separator = true,
               text_align = "center",
-
-              separator = false,
             },
           },
         },

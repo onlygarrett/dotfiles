@@ -3,6 +3,10 @@ local keymap = vim.keymap
 
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
+-- scrolling
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
 keymap.set("n", "QQ", ":q!<CR>", { desc = "Force quit" })
 keymap.set("n", "WW", ":w!<CR>", { desc = "Force save" })
 keymap.set("n", "<leader>qq", ":q<CR>", { silent = true, noremap = true }, { desc = "Quit" })
