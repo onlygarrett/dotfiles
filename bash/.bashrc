@@ -121,3 +121,8 @@ alias code='/home/grumschik/.code-connect/bash/code.sh'
 alias code-connect='/home/grumschik/.code-connect/bash/code-connect.sh'
 
 source /home/grumschik/.config/broot/launcher/bash/br
+
+. "$HOME/.atuin/bin/env"
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"

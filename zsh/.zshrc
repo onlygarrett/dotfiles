@@ -91,3 +91,7 @@ eval "$(pyenv init --path)"
 eval "$(zoxide init zsh --hook pwd)"
 
 
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

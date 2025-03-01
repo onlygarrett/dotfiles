@@ -29,3 +29,5 @@ fi
 
 if [ -e /home/grumschik/.nix-profile/etc/profile.d/nix.sh ]; then . /home/grumschik/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 . "$HOME/.rye/env"
+
+. "$HOME/.atuin/bin/env"
