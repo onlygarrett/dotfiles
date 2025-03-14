@@ -47,6 +47,7 @@ alias mux=tmuxinator
 alias nv='neovide --multigrid --notabs'
 alias ra=yazi
 alias vim=nvim
+alias vh=nvim .
 alias v=nvim
 alias watch=viddy
 alias ugu='ug -Q -. --view=nvim'
@@ -74,6 +75,7 @@ alias gcc='git diff --stat --cached origin/master' # Git Check Commit before pus
 alias gs='git show'
 alias home='nohup firefox -P "Home" > /dev/null 2>&1 &'
 alias lg='lazygit'
+alias ld='lazydocker'
 alias lvim='nvim -c "normal '\''0"'
 alias relog="DISPLAY=:0 gnome-session-quit --force"
 alias rest='shutdown now'

@@ -5,9 +5,7 @@ return {
   ---@type snacks.Config
   opts = {
     dashboard = {
-      width = 100,
       pane_gap = 20,
-      row = nil,
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
       preset = {
         keys = {
@@ -21,6 +19,7 @@ return {
             { key = "q", hidden = true, action = ":qa", enabled = package.loaded.lazy ~= nil },
           },
         },
+        width = 100,
         header = [[
                                                 
                                                 
@@ -58,6 +57,9 @@ return {
 ]],
       },
       formats = {
+        header = {
+          align = "center",
+        },
         key = { "" },
         file = function(item)
           return {
@@ -70,14 +72,18 @@ return {
         icon = { "" },
       },
       sections = {
-
-        { section = "header", pane = 1, height = 17 },
-        { section = "keys", pane = 2 },
+        {
+          pane = 1,
+          { section = "header", padding = 1, height = 200 },
+        },
         {
           pane = 2,
-          indent = 21,
+          padding = 5,
+          height = 50,
           {
-            { text = "" },
+            { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+            { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+            { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
             {
               text = {
                 { "n ", hl = "key" },
@@ -107,18 +113,23 @@ return {
                 { "Lazy", hl = "Normal" },
               },
             },
+            {
+              icon = "",
+              title = "Local Weather! GO OUTSIDE!",
+              padding = { 2, 2, 2, 2 },
+              gap = 5,
+            },
+            { section = "terminal", cmd = "curl -s 'wttr.in/?0'", gap = 5 },
           },
-          { text = "", padding = 2 },
-          { title = "Projects", padding = 1, indent = 21 },
-          { section = "projects", limit = 5, padding = 2, indent = 20 },
         },
       },
     },
+    explorer = { enabled = true },
     bigfile = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
     lazygit = { enabled = true },
-    notifier = { enabled = true },
+    notifier = { enabled = false },
     quickfile = { enabled = true },
     scroll = { enabled = true },
     statuscolumn = { enabled = true },

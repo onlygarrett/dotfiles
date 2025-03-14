@@ -2,6 +2,7 @@ source ~/.zsh_functions
 
 export ZSH="$HOME/.oh-my-zsh"
 
+neofetch --config ~/.config/neofetch/asdf/config3.conf -L
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -20,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export FPATH="/home/grumschik/.oh-my-zsh/custom/plugins/eza/completions/zsh:$FPATH"
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting autoupdate tmux rust sudo you-should-use) 
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting autoupdate tmux rust sudo ) 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,3 +96,4 @@ eval "$(zoxide init zsh --hook pwd)"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
