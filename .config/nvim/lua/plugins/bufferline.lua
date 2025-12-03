@@ -5,7 +5,7 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
       {
-        "echasnovski/mini.bufremove",
+        "nvim-mini/mini.bufremove",
         version = "*",
         config = function()
           require("mini.bufremove").setup({
